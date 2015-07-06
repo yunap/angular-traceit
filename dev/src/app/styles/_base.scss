@@ -1,0 +1,246 @@
+@import 'traceit-fonts';
+@import 'traceit-colors';
+@import 'traceit-mixins';
+@import 'traceit-variables';
+@import 'widgets/traceit-switches';
+@import 'widgets/traceit-buttons';
+@import 'widgets/traceit-checkboxes';
+
+body {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  overflow-y: hidden;
+  font-family: 'Avenir LT Std', 'Helvetica Neue', 'Lucida Grande', Verdana, sans-serif;
+  //font-size: 16px;
+  color: #666;
+  background-color: #C4C4C4;
+}
+
+input,
+textarea,
+button {
+  font: inherit;
+}
+
+// title bar
+.peaxy_header {
+  height: 42px;
+  width: 100%;
+  background-color: $peaxy-blue-dark;
+  line-height: 42px;
+  vertical-align: middle;
+  color: white;
+  position: relative;
+  padding-left: 30px;
+  top: 0;
+  z-index: 2;
+}
+
+.main-hf-settings {
+  width: 90%;
+  min-width: 400px;
+  padding: 0;
+  margin-top: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  border: 2px $peaxy-gray-medium-white;
+  background-color: white;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), 0 0 0.25em 0 rgba(0, 0, 0, 0.25) inset;
+}
+
+// popup - Create Architect Account, ... ?
+.main {
+  width: 60%;
+  min-width: 400px;
+  padding: 0;
+  margin-top: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: rgba(238, 240, 231, 1);
+  border: 2px #808080;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), 0 0 0.25em 0 rgba(0, 0, 0, 0.25) inset;
+}
+
+// selected row (or column?) highlight
+.selected {
+  background-image: url('/assets/img/blue_repeater.png');
+  background-repeat: repeat;
+}
+
+.margin-left {
+  margin-left: 20px;
+}
+
+h3, h4, h5, label {
+  color: $peaxy-blue-dark;
+}
+
+// alternating background on rows
+ul > li:nth-child(odd) {
+  background-color: #F5F5F5;
+  margin: 2px;
+}
+
+.top-buffer {
+  margin-top: 20px;
+}
+
+.nopadding {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+
+.p-title {
+  color: white;
+  padding-left: 15px;
+  font-size: 1.3em;
+}
+
+.p-vertical-line {
+  border-right: 1px solid #808080;
+}
+
+.p-content-license {
+  padding: 30px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.p-primary-icons, .p-secondary-icons, .p-level-icons, .help, .k-i-close {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  // text-indent: -3333px;
+  vertical-align: middle;
+}
+
+.p-i-Logo, .p-i-logo {
+  width: 112px;
+  height: 24px;
+  background-position: -2px -620px;
+}
+
+.p-content {
+  padding: 30px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.p-title1, .p-title2, .p-title3, .p-title4, .p-desc, .p-label {
+  vertical-align: middle;
+}
+
+.p-title1, .p-title2, .p-title3 {
+  color: $peaxy-blue-dark;
+  font-weight: bold;
+}
+
+.p-title1, .p-title2, .p-hr-l, .p-hr-s, .p-hr-blank {
+  padding: 0;
+  border: 0;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.p-title1 {
+  font-size: 24px;
+  height: 24px;
+}
+
+.p-hr-l {
+  height: 0;
+  color: $peaxy-blue-dark;
+  border-top: 2px solid $peaxy-blue-dark;
+}
+
+.p-title2, .p-desc {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.p-title3, .p-title4 {
+  font-size: 14px;
+  font-weight: normal;
+  margin: 5px;
+}
+
+.p-desc, .p-title4 {
+  color: $peaxy-gray-dark-cyan;
+  font-size: 14px;
+  display: block;
+}
+
+.p-input, .p-textbox {
+  font-size: 12px;
+  border: 1px solid rgb(162, 170, 173);
+  color: black;
+  height: 24px;
+  min-width: 220px;
+  border-radius: 2px;
+  vertical-align: middle;
+  margin-bottom: 6px;
+}
+
+.p-bgcolor, .p-hr-l, .p-bottom {
+  background-color: $peaxy-blue-dark;
+}
+
+.p-bottom {
+  height: 48px;
+  width: 100%;
+  bottom: 0;
+  padding-top: 10px;
+  left: 0;
+}
+
+.p-textbox {
+  width: 80%;
+  padding: 0;
+  resize: none;
+  height: 50px;
+  overflow: hidden;
+}
+
+.p-spinner {
+  background-image: url('/assets/img/spinner.gif');
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+}
+
+.p-spinner-align {
+  text-align: center;
+}
+
+.p-blue-repeater {
+  background-image: url('/assets/img/blue_repeater.png');
+  background-repeat: repeat;
+}
+
+.p-vertical-line {
+  border-right: 1px solid #808080;
+}
+
+.p-title {
+  color: white;
+  padding-left: 15px;
+  font-size: 1.3em;
+}
+
+.p-content-license {
+  padding: 30px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.k-window-titlebar {
+  border: 0;
+  background-color: $peaxy-blue-dark;
+  border-radius: 0;
+  height: 36px;
+  padding: .4em 0;
+}

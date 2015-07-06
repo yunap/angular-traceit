@@ -1,0 +1,47 @@
+input[type='checkbox'] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  padding: 5px !important;
+  margin: 5px !important;
+}
+
+//input[type='radio']{position: absolute; opacity: 0; cursor: pointer; padding: 5px !important; margin: 5px !important; }
+input[type='checkbox'] + label {
+  vertical-align: middle !important;
+  cursor: pointer;
+  color: black;
+  height: 24px;
+  line-height: 24px;
+}
+
+/* we use generated content to create a placeholder for the checkbox and the radio */
+input[type='checkbox'] + label::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: url('/assets/img/secondary_icons_sprite_051013.png') no-repeat 0 0;
+  background-position: -4px -424px;
+  vertical-align: middle;
+}
+
+/* disabled checkbox or radio */
+input[type='checkbox']:disabled + label {
+  opacity: .5;
+  cursor: default; /* or cursor: no-drop */
+}
+
+/* hover checkbox (unselected state only) */
+input[type='checkbox']:not(:checked):hover + label::before {
+  background-position: -88px -425px;
+}
+
+/* selected checkbox */
+input[type='checkbox']:checked + label::before {
+  background-position: -32px -425px;
+}
+
+input[type='checkbox']:focus + label {
+  outline: none; //dotted 1px; /* by not adding color to the value we force the use of system's default focus color 'invert' */
+}

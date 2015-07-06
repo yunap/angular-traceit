@@ -1,0 +1,87 @@
+
+// SWITCHES
+
+@import '../traceit-colors';
+
+.switch {
+  border: 1px solid;
+  cursor: pointer;
+  display: inline-block;
+  text-align: left;
+  overflow: hidden;
+  line-height: 8px;
+  min-width: 80px;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  @include border-radius(5px);
+}
+
+.switch.disabled > div > span.knob {
+  background: #AAAAAA;
+}
+
+.switch span {
+  cursor: pointer;
+  display: inline-block;
+  // not supported: float: left;
+  height: 100%;
+  line-height: 16px;
+  padding: 4px;
+  text-align: center;
+  width: 33%;
+  white-space: nowrap;
+  @include box-sizing(border-box);
+}
+
+.switch > div {
+  position: relative;
+  width: 150%;
+}
+
+.switch .switch-on {
+  left: 0%;
+}
+
+.switch .switch-off {
+  left: -50%
+}
+
+.switch .switch-left, .switch .switch-right {
+  z-index: 1;
+}
+
+.switch .switch-left {
+  color: white;
+  background: #005FCC;
+  *background-color: #0088CC;
+  border-color: #0088CC #0088CC #005580;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  @include gradient-vertical(#0044CC, #0088CC);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.switch .switch-right {
+  color: #333333;
+  background: $peaxy-gray-verylight-shadow;
+  background-color: $peaxy-gray-verylight-shadow;
+  *background-color: white;
+  border-color: white white #D9D9D9;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  @include gradient-vertical(#E6E6E6, white);
+}
+
+.switch .knob {
+  background: red;
+  *background-color: $peaxy-gray-verylight-shadow;
+  background-color: $peaxy-gray-verylight-white;
+  border-color: $peaxy-gray-verylight-shadow $peaxy-gray-verylight-shadow $peaxy-gray-light;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  border-left: 1px solid $peaxy-gray-verylight;
+  border-right: 1px solid $peaxy-gray-verylight;
+  width: 34%;
+  z-index: 100;
+  @include gradient-vertical(white, #E6E6E6);
+}
+
+.switch-animate {
+  @include animation-transition(left,0.5s);
+}

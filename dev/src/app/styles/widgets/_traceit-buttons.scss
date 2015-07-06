@@ -1,0 +1,119 @@
+@import '../traceit-colors';
+
+.s-button, .alarm-button, .save-button, .cta-button {
+  color: white;
+  border: none; /*height:24px;*/
+  min-width: 90px;
+  line-height: 24px;
+  cursor: pointer; /*padding:0 3px;*/
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.s-button:active, .alarm-button:active, .save-button:active, .cta-button:active {
+  color: black;
+}
+
+.s-button:disabled, .alarm-button:disabled, .save-button:disabled, .cta-button:disabled,
+.s-button:disabled:hover, .alarm-button:disabled:hover, .save-button:disabled:hover, .cta-button:disabled:hover {
+  background-color: #DCDCDC;
+  cursor: default;
+}
+
+.s-button:disabled:active, .alarm-button:disabled:active, .save-button:disabled:active, .cta-button:disabled:active {
+  background-color: #DCDCDC;
+  cursor: default;
+  color: white;
+}
+
+.s-button {
+  background-color: #A1A9AC;
+}
+
+.s-button:hover {
+  background-color: Grey;
+}
+
+.save-button, .cta-button {
+  background-color: $peaxy-blue-verylight-cyan;
+}
+
+.save-button:hover, .cta-button:hover {
+  background-color: #0092C9;
+}
+
+.right-button {
+  margin: 8px 8px;
+  min-width: 100px;
+  float: right;
+}
+
+.left-button {
+  margin: 8px 8px;
+  min-width: 100px;
+  float: left;
+}
+
+.form-buttons-ul {
+  white-space: nowrap;
+  padding: 0 0;
+  text-align: center;
+  margin: 0;
+}
+
+.active-button {
+  background-color: #00A0E2;
+}
+
+.btn-space {
+  width: 46.5%;
+}
+
+.ghost-button-full-color {
+  display: inline-block;
+  width: 200px;
+  padding: 8px;
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid #fff;
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+  transition: color 0.3s ease-out,
+  background-color 0.3s ease-out,
+  border-color 0.3s ease-out;
+}
+.ghost-button-full-color:hover,
+.ghost-button-full-color:active {
+  background-color: #3eb5af; //#9363c4;
+  border-color: #3eb5af;
+  color: #fff;
+  transition: color 0.3s ease-in,
+  background-color 0.3s ease-in,
+  border-color 0.3s ease-in;
+}
+
+
+.ghost-button-full-color {
+  display: inline-block;
+  width: 200px;
+  padding: 8px;
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid #fff;
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+  transition: color 0.3s ease-out,
+  background-color 0.3s ease-out,
+  border-color 0.3s ease-out;
+}
+.ghost-button-full-color:hover,
+.ghost-button-full-color:active {
+  background-color: #3eb5af;
+  border-color: #3eb5af;
+  color: #fff;
+  transition: color 0.3s ease-in,
+  background-color 0.3s ease-in,
+  border-color 0.3s ease-in;
+}

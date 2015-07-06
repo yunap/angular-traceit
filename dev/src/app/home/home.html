@@ -1,0 +1,536 @@
+<div>
+  <nav class="navbar sb_navbar navbar-fixed-top mainmenu" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" id="topNavBtn" class="navbar-toggle" data-toggle="collapse"
+                data-target="#navbar-collapse-sb">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <a href="#head" class="navbar-brand brand-title">AngularJs traceit directive</a>
+      </div>
+
+      <div style="height: auto;" class="navbar-collapse in" id="navbar-collapse-sb">
+        <ul class="nav navbar-nav pull-right">
+          <li><a ng-click="scrollTo('GettingStarted')">Getting Started</a></li>
+          <li><a ng-click="scrollTo('diy')">DIY</a></li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+  </nav>
+</div>
+
+<div class="img-cover">
+  <h2 class="text-center title wcolor_green" id="to_test"
+      traceit
+      is-visible="false"
+      stroke="#330044"
+      redrawSpeed="50000"
+      retrace-trigger="retraceWatchers.retrace0"
+      trace-toggle="box1">traceit SandBox</h2>
+</div>
+
+<!-- Traceit section -->
+<div class="container">
+  <div class="theme-invert">
+
+    <div class="trace_background">
+      <div class="row ">
+        <div class="col-md-10 col-lg-10 col-sm-12 col-xs-12 col-md-offset-1 col-lg-offset-1 trace_page_txt ">
+          <span class="trace_page_kw">angular-traceit</span> is an AngularJS Directive for <span class="trace_page_kw">traceit.js</span>
+          a jQuery Plugin that lets you trace page elements ...
+          Check it out
+          <button type="button" id="tracediv" class="btn btn-primary trace_on" ng-click="reTrace(['retrace0'])">Trace the Title</button>
+          <button type="button" class="btn btn-primary trace_on" ng-click="box1=!box1">Toggle</button> isOpen: {{box1}}
+          <br>
+          <h4>
+            Or perhaps you're looking for a way to provide your user with a visual cue? Tracing part of an image can do
+            this.
+            To see it in action, select a cat mood from the list below :
+          </h4>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-offset-1 col-lg-6 col-md-8 col-sm-8 col-xs-12 text-center">
+          <div class="well">
+            <div class="overlay">
+              <div ng-repeat="i in getNumber(12) track by $index" id="tail_c{{$index + 1}}" traceit is-visible="false"
+                   trace-toggle="catListCheckbox['c' + ($index + 1)]"></div>
+            </div>
+            <img class="fill_clmn img-responsive" src="/assets/img/tailcats.jpg" alt="">
+          </div>
+
+        </div>
+
+        <div class="col-lg-offset-1 col-lg-3 col-md-offset-1 col-md-3 col-sm-4 col-xs-12 text-left">
+          <div class="well">
+            <ul class="list-group checked-list-box">
+              <li ng-repeat="item in catListItems" class="list-group-item"
+                  ng-class="{'list-group-item-primary active': catListCheckbox[item.value] === true}" id="item.value">
+                  <span class="state-icon" ng-click="toggleCatMood(item.value)"
+                        ng-class="{'glyphicon glyphicon-check': catListCheckbox[item.value] === true,
+                                   'glyphicon glyphicon-unchecked': catListCheckbox[item.value] === false}">
+                  </span>{{item.name}}<input class="hidden" type="checkbox" ng-model="catListCheckbox[item.value]"></li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+      <!-- /row -->
+    </div>
+
+    <hr class="hr-spacer" id="GettingStarted">
+
+    <div class="trace_background">
+      <div class="row ">
+        <div class="col-md-10 col-lg-10 col-sm-12 col-xs-12 col-md-offset-1 col-lg-offset-1 ">
+          <h2>Getting Started</h2>
+        </div>
+      </div>
+
+      <div class="row example_text">
+        <div class="col-md-10 col-lg-10 col-sm-12 col-xs-12 col-md-offset-1 col-lg-offset-1 trace_page_txt">
+          <p class="examples">
+          How to Install / Usage<br>
+            (1) Install the plugin into your Angular.js project, manually or via "bower install angular-traceit --save"<br>
+            (2) Include angular-traceit.js (or angular-traceit.min.js) in your index.html, after including Angular itself<br>
+            (3) Add 'angular-traceit' as a new module dependency in your angular app.<br>
+          </p>
+
+          <div class="primary-content">
+            <pre class="prettyprint">
+&lt;script src="/angular/angular.js"&gt;&lt;/script&gt;
+&lt;script src="/jquery/dist/jquery.js"&gt;&lt;/script&gt;
+&lt;script src="/js/raphael.js"&gt;&lt;/script&gt;
+&lt;script src="/js/traceit.js"&gt;&lt;/script&gt;
+&lt;script src="/js/angular-traceit.js"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+  var myApp=angular.module('myApp', ['angular-traceit']);
+&lt;/script&gt;</pre>
+          </div>
+
+          <p class="examples">
+            Apply the directive to your element. If you would like to see your element be traced
+            immediately initialize a trace instance with default options.
+          </p>
+
+          <div class="primary-content">
+              <pre class="prettyprint">
+&lt;div id="elementid" traceit &gt;Let's trace this element.&lt;/div&gt;
+              </pre>
+          </div>
+
+          <p class="examples"> If you would like element to not be traced right a way initialize a trace instance with 'is-visible'
+            attribute set to false and providing scope variable for trace-toggle attribute, initialize it to false. Then later in your controller you can call
+            reTrace method by setting trace-toggle scope variable to true.
+          </p>
+
+          <div class="primary-content">
+            <pre class="prettyprint">
+//Set 'is-visible' attribute to false, provide a scope variable for trace-toggle attribute
+&lt;h2  id="elementid" is-visible="false" trace-toggle="toggleOne" traceit&gt;Title here.&lt;/h2&gt;
+</pre></div>
+          <br>
+          <div class="primary-content">
+            <pre class="prettyprint">
+//Initialize trace-toggle scope variable to false.
+$scope.toggleOne = false;
+
+//To start animation set trace-toggle scope variable to true
+//re-setting $scope.toggleOne to false will hide the trace
+$scope.toggleTrace = function(){
+   $scope.toggleOne = !$scope.toggleOne
+}
+            </pre>
+          </div>
+
+          <div class="trace_example_content">
+            <p class="examples"> To trace or toggle this element <a id="trace_example" class="ghost-button-full-color" ng-click="box2 = !box2">click here</a>.</p>
+            <div id="example" class="example" traceit is-visible="false" trace-toggle="box2">
+              #example
+            </div>
+          </div>
+
+          <p class="examples">What can I configure? All options are optional. You
+            can overwrite default trace directive options by providing trace-opt-obj
+            attribute: trace-opt-obj="traceOptEx2". traceOptEx2 is a scope variable which you initialize in your controller.
+          </p>
+
+          <div class="primary-content">
+            <pre class="prettyprint">
+//To initialize a trace instance with options object.
+//use trace-opt-obj attribute: trace-opt-obj="traceOptEx2"
+$scope.traceOptEx2 = {
+       'stroke': '#0000ff',
+       'stroke-width': 5,
+       'stroke-opacity': 1,
+       'fill': '#00ff00',
+       'fill-opacity': 0.2,
+       'gap-point': 'top_left',
+       'title': "see, this is example2! Click me."
+ };
+//onclick Callback
+$scope.stuff = function () {
+   alert('Triggered from a callback when user clicks on a trace shape.');
+   console.log('Triggered from a callback when user clicks on a trace shape.');
+};
+
+//Following options require separate attributes:
+//trace-canvas-padding, redraw-speed, donothideonclick and callback functions:
+//onhide, onendtrace & onclick
+<&lt;iv id="example2" class="example2"
+     traceit
+     is-visible="false"
+     trace-opt-obj="traceOptEx2"
+     trace-canvas-padding="28"
+     redraw-speed="6000"
+     donothideonclick="true"
+     onclick="stuff()"
+     trace-toggle="box2"&gt; Example element &lt;/div&gt;
+            </pre>
+          </div>
+
+          <div class="trace_example_content">
+            <p class="examples"><a id="trace_example2" class="ghost-button-full-color" ng-click="traceRandom()">click to
+              toggle</a>.</p>
+
+            <div class="row no-gutter">
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <p>Clicking on the button above will update
+                stroke, fill, redrawSpeed and traceCanvasPadding options with randomly generated values.
+                </p>
+                <pre><code>trace-opt-obj = {{traceOptEx2 | json}}</code></pre>
+              </div>
+
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="text-center bottom-spacer">The ellement below will get traced.<br></div>
+                <div id="example2" class="example2" traceit is-visible="false" trace-opt-obj="traceOptEx2"
+                     trace-canvas-padding="28" redraw-speed="6000" donothideonclick="true" onclick="stuff()"
+                     trace-toggle="box3"> #example2
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="examples">You can similarly set new options when triggering reTrace method. Change trace-opt-obj attribute.
+            Then change trace-toggle or retrace-trigger scope variable to trigger the watch function.
+            Difference between trace-toggle and retrace-trigger methods: trace-toggle works as show/hide flag,
+            and will only re-trace the element if watch variable is set to true.
+            retrace-trigger on the other hand will trigger re-trace without consulting the variable value.
+          </p>
+
+          <div class="primary-content">
+            <pre class="prettyprint">
+//Use traceit directives on the elements you want to trace
+&lt;a class="ghost-button-full-color" ng-click="reTrace(['retrace31','retrace32'])"&gt;click to trace&lt;/a&gt;
+&lt;div id="example31" class="example" traceit
+trace-opt-obj="retraceWatchersOptionsObj.retrace31"
+retrace-trigger="retraceWatchers.retrace31"&gt;
+#example3_1&lt;/div&gt;
+
+&lt;div id="example32" class="example" traceit
+trace-opt-obj="retraceWatchersOptionsObj.retrace32"
+is-visible="false"
+retrace-trigger="retraceWatchers.retrace32"&gt;
+#example3_2&lt;/div&gt;
+            </pre>
+            </div>
+
+          <p class="examples">In controller</p>
+
+          <div class="primary-content">
+            <pre class="prettyprint">
+//Here are the option objects for the elements below.
+$scope.retraceWatchersOptionsObj = {
+        retrace31: {
+          stroke-width: 3,
+          stroke-opacity: 1,
+          fill: '#0000cc',
+          fill-opacity: 0.2
+        },
+        retrace32: {
+          stroke: '#aa0000',
+          stroke-width: 4,
+          stroke-opacity: 1,
+          isVisible: 'true'
+        },
+};
+
+//this is a new options object I use to update
+//retraceWatchersOptionsObj.retrace32
+$scope.retraceWatchersNewOptionsObj = {
+        retrace31: {
+          'stroke-width': 2,
+          'stroke-opacity': 1,
+          'stroke': 'yellow',
+          'arrow-end': 'classic-wide-long',
+          'isVisible': 'true'
+        }
+};
+
+//this is the function I used to update trace-opt-obj scope variable and trigger the re-trace
+$scope.reTrace = function (retraceIDs) {
+        retraceIDs.forEach(function (e, index) {
+            if( $scope.retraceWatchersNewOptionsObj[e] !== undefined ) {
+              angular.forEach( $scope.retraceWatchersNewOptionsObj[e], function(value, key) {
+                $scope.retraceWatchersOptionsObj[e][key] = value;
+              });
+            }
+            //trigger re-trace by changing retraceWatchers.retrace32 and retraceWatchers.retrace31
+            $scope.retraceWatchers[e] = !$scope.retraceWatchers[e];
+        });
+};
+
+            </pre>
+          </div>
+
+          <div class="trace_example_content">
+            <p class="examples"><a id="trace_example3" class="ghost-button-full-color"
+                                   ng-click="reTrace(['retrace31','retrace32'])">click to trace</a></p>
+
+            <div id="example31" class="example" traceit trace-opt-obj="retraceWatchersOptionsObj.retrace31"
+                 retrace-trigger="retraceWatchers.retrace31"> #example3_1
+            </div>
+            <span id="example32" traceit is-visible="false" trace-opt-obj="retraceWatchersOptionsObj.retrace32" retrace-trigger="retraceWatchers.retrace32"
+                  class="example3span"> #example3_2 </span>
+          </div>
+
+          <br>
+
+          <p class="examples">Can I have callbacks? Sure. </p>
+
+          <div class="primary-content">
+<pre class="prettyprint">
+//In controller: declare callback functions
+$scope.onHide = function () {
+   alert('This was triggered when hide animation completed.');
+   console.log('This was triggered when hide animation completed.');
+};
+
+$scope.stuff = function () {
+   alert('Triggered from a callback when user clicks on a trace shape.');
+   console.log('Triggered from a callback when user clicks on a trace shape.');
+};
+
+$scope.onEndTrace = function () {
+   alert('Triggered from a callback when trace animation completes.');
+   console.log('Triggered from a callback when trace animation completes.');
+};
+
+//in View:
+&lt;div id="example40" class="example"    traceit stroke="blue"
+     stroke-width="4"
+     stroke-opacity="1"
+     stroke-dasharray="--.." fill="#00ff00"
+     fill-opacity="0.2"
+     retrace-trigger="retraceWatchers.retrace4"
+     is-visible="false"
+     onclick="stuff()"
+     onhide="onHide()"
+     onendtrace="onEndTrace()"
+  &gt; #example40 &lt;/div&gt;
+</pre>
+          </div>
+
+          <div class="trace_example_content">
+            <p class="examples"><a id="trace_example4" class="ghost-button-full-color" ng-click="reTrace(['retrace4'])">click
+              to re-trace</a> to call onClick callback function click on the shape.</p>
+
+            <div id="example40" class="example"
+                 traceit stroke="blue"
+                 stroke-width="4"
+                 stroke-opacity="1"
+                 stroke-dasharray="--.." fill="#00ff00"
+                 fill-opacity="0.2"
+                 retrace-trigger="retraceWatchers.retrace4"
+                 is-visible="false"
+                 onclick="stuff()"
+                 onhide="onHide()"
+                 onendtrace="onEndTrace()"
+              > #example40
+            </div>
+          </div>
+          <p class="examples">Resizing a window or pressing the escape key will redraw all the visible traces.</p>
+
+          <p class="examples">The list of trace options.</p>
+          <div class="primary-content">
+<pre class="prettyprint prettyprinted"><span class="com">/********************************************************************************************************************
+arrow-end		string		arrowhead on the end of the path. The format for string is
+					type[-width[-length]].
+					Possible types: classic, block, open, oval, diamond, none,
+					width: wide, narrow, midium,
+					length: long, short, midium.
+cursor			string		CSS type of the cursor
+fill			string 		colour, gradient or image
+fill-opacity		number
+gap-point		string		["top","top_left","top_right","bottom","bottom_left","bottom_right"]
+			or number	0 - 100, where 0 and 100 both mean "top" (@12 o'clock position), 50 is "bottom" (@6pm),
+							25 is "top_right" (@3pm) etc.
+opacity			number
+stroke			string 		stroke colour
+stroke-dasharray		string 		[“”, “-”, “.”, “-.”, “-..”, “. ”, “- ”, “--”, “- .”, “--.”, “--..”]
+stroke-linecap		string 		[“butt”, “square”, “round”]
+stroke-opacity		number
+stroke-width		number 		stroke width in pixels, default is '1'
+title 			string 		will create tooltip with a given text
+**********************************************************************************************************************/</span></pre>
+          </div>
+
+      </div>
+    </div>
+  </div>
+
+    <hr class="hr-spacer" id="diy">
+
+    <div class="trace_background">
+      <div class="row ">
+        <div class="col-md-10 col-lg-10 col-sm-12 col-xs-12 col-md-offset-1 col-lg-offset-1 ">
+          <h2>DIY</h2>
+        </div>
+      </div>
+
+      <div class="row example_text">
+        <div class="col-md-10 col-lg-10 col-sm-12 col-xs-12 col-md-offset-1 col-lg-offset-1 trace_page_txt">
+          <p class="examples">Try it out. Choose the options in the table below, then click to re-trace.
+            "gap-point" and "traceCanvasPadding" options can only be set on a new shape. To see them change
+            remove the existing shape first, then select the options below and trace the element again.
+          </p>
+
+          <p class="examples">
+          <div class="trace_example_content">
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+
+            <div class="options-table">
+              <div class="row no-gutter" ng-class="{'first-bg' : $index%2, 'second-bg' : !($index%2)}" ng-repeat="option in traceOptionsTxt">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">{{option.name}}</div>
+                <!--<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 align-left">{{option.type}}</div>-->
+                <!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 align-left">{{option.description}}</div>-->
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 align-right">
+
+                  <div ng-show="option.step">
+                    <input name="{{option.name}}" type="number" class="form-control number-stepper" ng-model="demoOptions[option.name]"
+                           min="{{option.min}}" max="{{option.max}}"
+                           step="{{option.step}}"/>
+                  </div>
+
+                  <div ng-show="option.dropdownList">
+                    <select class="form-control" ng-model="demoOptions[option.name]"
+                            ng-options="item.value as item.name for item in option.dropdownList" id="role">
+                      <option value="">select</option>
+                    </select>
+                  </div>
+
+                  <div ng-show="option.color">
+                    <input colorpicker="rgba" colorpicker-position="top" class="form-control" ng-model="demoOptions[option.name]" type="text">
+                  </div>
+
+                  <div ng-show="option.step == undefined && option.dropdownList == undefined && option.color == undefined">
+                    <input name="{{option.name}}" class="form-control" ng-model="demoOptions[option.name]"/>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+              </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <p>
+                <a class="ghost-button-full-color" ng-click="demoTrace()">Click to re-trace</a>
+                <a class="ghost-button-full-color" ng-click="removediy = !removediy">remove</a>
+              </p>
+                <div class="options-table">
+                  <div class="row no-gutter" ng-class="{'first-bg' : $index%2, 'second-bg' : !($index%2)}" ng-repeat="option in traceOptionsNewShape">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">{{option.name}}</div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 align-right">
+
+                      <div ng-show="option.step">
+                        <input name="{{option.name}}" type="number" class="form-control number-stepper" ng-model="demoOptions[option.name]"
+                               min="{{option.min}}" max="{{option.max}}"
+                               step="{{option.step}}"/>
+                      </div>
+
+                      <div ng-show="option.dropdownList">
+                        <select class="form-control" ng-model="demoOptions[option.name]"
+                                ng-options="item.value as item.name for item in option.dropdownList" id="role">
+                          <option value="">select</option>
+                        </select>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <div id="example50" class="exampleDIY" traceit trace-opt-obj="demoOptionsObj" is-visible="false"
+                     trace-canvas-padding="20" redraw-speed="4000"
+                     onendtrace="onEndDemoTrace()"
+                     retrace-trigger="box4"
+                     trace-delete="removediy"> #DIY example
+                </div>
+                <br>
+                <pre><code>trace-opt-obj = {{demoOptionsObj | json }}</code></pre>
+                </div>
+              </div>
+
+
+              <!--<div class="trace_example_content">-->
+              <!--<p><a class="ghost-button-full-color" ng-click="demoTrace()">Click to re-trace</a>-->
+              <!--</p>-->
+              <!--<div class="row no-gutter">-->
+                <!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">-->
+                  <!--<pre><code>trace-opt-obj = {{demoOptionsObj | json }}</code></pre>-->
+                <!--</div>-->
+
+                <!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">-->
+                  <!--<div id="example51" class="exampleDIY" traceit trace-opt-obj="demoOptionsObj" is-visible="false"-->
+                       <!--trace-canvas-padding="20" redraw-speed="4000"-->
+                       <!--onendtrace="onEndDemoTrace()"-->
+                       <!--retrace-trigger="box4"-->
+                       <!--trace-delete="removediy"> #DIY example-->
+                  <!--</div>-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</div>-->
+
+          <!--<p class="examples">These trace options can only be set on a new shape. To see them change <a class="ghost-button-full-color" ng-click="removediy = !removediy">remove</a> the existing shape first,-->
+            <!--then select the options below and <a class="ghost-button-full-color" ng-click="demoTrace()">trace</a> the element again.</p>-->
+          <!--<div class="options-table">-->
+            <!--<div class="row no-gutter" ng-class="{'first-bg' : $index%2, 'second-bg' : !($index%2)}" ng-repeat="option in traceOptionsNewShape">-->
+              <!--<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">{{option.name}}</div>-->
+              <!--<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 align-left">{{option.type}}</div>-->
+              <!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 align-left">{{option.description}}</div>-->
+              <!--<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 align-right">-->
+
+                <!--<div ng-show="option.step">-->
+                  <!--<input name="{{option.name}}" type="number" class="form-control number-stepper" ng-model="demoOptions[option.name]"-->
+                         <!--min="{{option.min}}" max="{{option.max}}"-->
+                         <!--step="{{option.step}}"/>-->
+                <!--</div>-->
+
+                <!--<div ng-show="option.dropdownList">-->
+                  <!--<select class="form-control" ng-model="demoOptions[option.name]"-->
+                          <!--ng-options="item.value as item.name for item in option.dropdownList" >-->
+                    <!--<option value="">select</option>-->
+                  <!--</select>-->
+                <!--</div>-->
+
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
+
+          </div>
+          </p>
+          </div>
+        </div>
+      </div>
+
+  </div>
+  </div>
+
+<div id="canvas_container"></div>

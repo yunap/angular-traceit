@@ -1,0 +1,53 @@
+
+// COLORS:
+// 
+// All non-primary color names follow this format:
+// - begin with "peaxy-" 
+// - followed by the dominant color: 
+//       red yellow green cyan blue magenta gray
+//   roughly determined by RGB proportions - use yellow/cyan/magenta/gray when
+//   their adjacent primaries are roughly equal.
+// - followed by dominant color shade: 
+//       verydark 0-2, dark 3-5, medium 6-9, light A-C, verylight D-F 
+// - optionally followed by a more specific color qualifier (e.g. tint, number)
+
+$peaxy-red-light:                  #EF354F;
+$peaxy-red-medium:                 #BB1F34;
+$peaxy-green-medium:               #9FAA4C;  // and #909A45
+$peaxy-blue-verydark:              #002337;
+$peaxy-blue-dark:                  #24303F;  // and #232F3E and #242F3F
+$peaxy-blue-dark-green:            #00548B;
+$peaxy-blue-light:                 #336A8A;
+$peaxy-blue-verylight-cyan:        #00A3E0;
+$peaxy-gray-light:                 #A1A9AC;  // and #A2AAAD
+$peaxy-gray-light-peach:           #DEB887;
+$peaxy-gray-verylight:             #C4C4C4;  // and #CCCCCC
+$peaxy-gray-medium:                #666666;
+$peaxy-gray-medium-white:          #888888;
+$peaxy-gray-medium-cyan:           #85959F;
+$peaxy-gray-dark-cyan:             #515557;
+$peaxy-gray-dark-yellow:           #514F4A;
+$peaxy-gray-verylight-shadow:      #E3E3E3;
+$peaxy-gray-verylight-yellow:      #D5D1C3;
+$peaxy-gray-verylight-peach:       #FFBEA3;
+$peaxy-gray-verylight-white:       #F5F5F5;
+
+
+// SKIN ATTRIBUTES:
+//
+// Map of skin attributes to colors.
+// Preferably, use these.
+// Use peaxy-<standard_attribute_names>
+
+$peaxy-background-color:           $peaxy-gray-verylight;
+$peaxy-font-color:                 $peaxy-blue-dark;
+
+$peaxy-color-accent-blue:          $peaxy-blue-verylight-cyan;
+$peaxy-color-background-blue:      $peaxy-blue-dark;
+
+$peaxy-color-shadow:               $peaxy-gray-verylight-shadow;
+
+$peaxy-color-error:                $peaxy-red-medium;
+$peaxy-color-warning:              yellow;
+$peaxy-color-info:                 $peaxy-gray-dark-cyan;
+$peaxy-color-normal:               $peaxy-green-medium;

@@ -1,0 +1,35 @@
+
+// MIXINS
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin box-sizing($size) {
+  -webkit-box-sizing: $size;
+     -moz-box-sizing: $size;
+       -o-box-sizing: $size;
+          box-sizing: $size;
+}
+
+@mixin animation-transition($start,$secs) {
+  -webkit-transition: $start $secs;
+     -moz-transition: $start $secs;
+       -o-transition: $start $secs;
+          transition: $start $secs;
+}
+
+@mixin gradient-vertical($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) {
+  background-image: -moz-linear-gradient(top, $start-color $start-percent, $end-color $end-percent);    // Safari 5.1-6, Chrome 10+
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#{ie-hex-str($start-color)}), to(#{ie-hex-str($end-color)}));
+  background-image: -webkit-linear-gradient(top, $start-color $start-percent, $end-color $end-percent);
+  background-image: -o-linear-gradient(top, $start-color $start-percent, $end-color $end-percent);      // Opera 12
+  background-image: linear-gradient(to bottom, $start-color $start-percent, $end-color $end-percent);   // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}' GradientType=0); // IE9 and down
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+}
+

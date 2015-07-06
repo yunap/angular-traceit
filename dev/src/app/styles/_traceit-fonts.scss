@@ -1,0 +1,86 @@
+
+// FONTS
+
+@import "traceit-colors";
+
+// AVENIR
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('../assets/AvenirLTStd-Light.eot');
+  src: url('../assets/AvenirLTStd-Light.eot?#iefix') format('embedded-opentype'),
+  url('../assets/AvenirLTStd-Light.woff') format('woff'),
+  url('../assets/AvenirLTStd-Light.ttf') format('truetype'),
+  url('../assets/AvenirLTStd-Light.svg#AvenirLTStd-Light') format('svg');
+}
+@font-face {
+  font-family: 'AvenirRoman';
+  src: url('../assets/AvenirLTStd-Roman.eot');
+  src: url('../assets/AvenirLTStd-Roman.eot?#iefix') format('embedded-opentype'),
+  url('../assets/AvenirLTStd-Roman.woff') format('woff'),
+  url('../assets/AvenirLTStd-Roman.ttf') format('truetype'),
+  url('../assets/AvenirLTStd-Roman.svg#AvenirLTStd-Roman') format('svg');
+}
+
+@font-face {
+  font-family: 'Wire One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Wire One'), local('WireOne'), url(http://themes.googleusercontent.com/static/fonts/wireone/v4/fas9dl2wmMkt5rCu-aBez3YhjbSpvc47ee6xR_80Hnw.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Sans Pro'), local('SourceSansPro-Regular'), url(http://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/ODelI1aHBYDBqgeIAH2zlNHq-FFgoDNV3GTKpHwuvtI.woff) format('woff');
+}
+
+// FONTS
+//
+// Need to figure out how to load Avenir
+
+$font-stack: WireOne, Helvetica, sans-serif;
+$font-stack-roman: AvenirRoman, Helvetica, sans-serif;
+
+.underline-12 {
+  font-weight: normal;
+  color: $peaxy-blue-dark-green;
+  font-size: 12px;
+}
+
+.gray-12 {
+  font-weight: normal;
+  color: $peaxy-gray-light;
+  font-size: 12px;
+}
+
+.gray-14 {
+  font-weight: normal;
+  color: $peaxy-gray-light;
+  font-size: 14px;
+}
+
+.lightblack-14 {
+  font-weight: normal;
+  color: $peaxy-gray-dark-cyan;
+  font-size: 14px;
+}
+
+.black-14 {
+  font-weight: normal;
+  color: black;
+  font-size: 14px;
+}
+
+.normal-18 {
+  font-weight: normal;
+  color: $peaxy-blue-dark;
+  font-size: 18px;
+}
+
+.gray-18 {
+  font-weight: normal;
+  color: $peaxy-gray-light;
+  font-size: 18px;
+}

@@ -1,0 +1,67 @@
+.peaxy-pageslide {
+  background-color: white;
+  //  border-right: 1px solid #808080;
+}
+
+.ng-pageslide {
+  background-color: white;
+  z-index: 1000;
+  position: absolute;
+  width: 0;
+  height: 0;
+  -moz-transition-property: width, height; /* Firefox 4 */
+  -webkit-transition-property: width, height; /* Safari and Chrome */
+  -o-transition-property: width, height; /* Opera */
+  transition-property: width, height;
+  -webkit-transition-duration: 0.35s; /* Safari */
+  transition-duration: 0.35s;
+}
+
+.ng-pageslide-right, .ng-pageslide-left {
+  height: 100%;
+  top: 0px;
+  bottom: 0px;
+}
+
+.ng-pageslide-right {
+  right: 0px;
+}
+
+.ng-pageslide-left {
+  left: 0px;
+}
+
+.ng-pageslide-right.open, .ng-pageslide-left.open {
+  width: 350px;
+}
+
+.ng-pageslide-top, .ng-pageslide-bottom {
+  width: 100%;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+}
+
+.ng-pageslide-top {
+  top: 0px;
+}
+
+.ng-pageslide-bottom {
+  bottom: 0px;
+}
+
+.ng-pageslide-top.open, .ng-pageslide-bottom.open {
+  height: 300px;
+}
+
+.ng-pageslide > div, .ng-pageslide.open-remove > div {
+  display: none;
+}
+
+.ng-pageslide.open > div {
+  display: block;
+}
+
+.ng-pageslide.open-add > div {
+  display: none;
+}
