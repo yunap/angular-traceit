@@ -21,22 +21,22 @@ angular
         'fill': '#00ff00',
         'fill-opacity': 0.2,
         'gap-point': 'top_left',
-        'title': "see, this is example2! Click me."
+        'title': 'see, this is example2! Click me.'
       };
 
       $scope.catListItems = [
         {name: 'Friendly and content', value: 'c1'},
         {name: 'Non-threatening, unsure', value: 'c2'},
-        {name: "Derisive", value: 'c3'},
-        {name: "Friendly but unsure", value: 'c4'},
-        {name: "Amicable, not fearful or aggressive", value: 'c5'},
-        {name: "Defensive aggression", value: 'c6'},
-        {name: "Angry", value: 'c7'},
-        {name: "Potentially aggressive", value: 'c8'},
-        {name: "Submissive", value: 'c9'},
-        {name: "Very happy", value: 'c10'},
-        {name: "Excited, angry or irritable", value: 'c11'},
-        {name: "Alert, interested", value: 'c12'}
+        {name: 'Derisive', value: 'c3'},
+        {name: 'Friendly but unsure', value: 'c4'},
+        {name: 'Amicable, not fearful or aggressive', value: 'c5'},
+        {name: 'Defensive aggression', value: 'c6'},
+        {name: 'Angry', value: 'c7'},
+        {name: 'Potentially aggressive', value: 'c8'},
+        {name: 'Submissive', value: 'c9'},
+        {name: 'Very happy', value: 'c10'},
+        {name: 'Excited, angry or irritable', value: 'c11'},
+        {name: 'Alert, interested', value: 'c12'}
       ];
 
       $scope.catListCheckbox = [];
@@ -418,7 +418,7 @@ angular
       $scope.traceRandom = function () {
         if (!$scope.box3) {
           //generate random color // & 0x7f7f7f).toString(16); to select rendom dark colors
-          $scope.traceOptEx2.stroke = '#' + Math.floor(Math.random() * 0xffffff).toString(16);
+          $scope.traceOptEx2.stroke = '#' + (Math.random() * 0xffffff << 0).toString(16);
           $scope.traceOptEx2.fill = '#' + Math.floor(Math.random() * 0xffffff).toString(16);
           $scope.traceOptEx2.redrawSpeed = Math.floor(Math.random() * 10000) + 1000;
           $scope.traceOptEx2.traceCanvasPadding = Math.floor((Math.random() * 20) + 9);
