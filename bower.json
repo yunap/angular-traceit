@@ -1,0 +1,25 @@
+{
+  "name": "traceit",
+  "version": "0.1.0",
+  "main": [ "dist/traceit-directive.js" ],
+  "ignore":
+  [
+    "README*",
+    "LICENSE*",
+    "**/*.sass",
+    "**/jquery.css",
+    "images",
+    ".git*",
+    "*jquery.json",
+    "index*",
+    "dev"
+  ],
+  "dependencies": {
+    "traceit": ">=0.1.5"
+  },
+  "repository": {
+  "type": "git",
+  "url": "git://github.com/yunap/angular-traceit.git"
+  }
+}
+
