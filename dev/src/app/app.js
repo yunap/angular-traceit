@@ -1,7 +1,7 @@
 
 angular.module('traceitapp', [
   'traceitapp-templates', 'traceitapp.home', 'angular-traceit', 'prettyprint',
-  'ui.router', 'checklist-model', 'ngAnimate', 'ui.bootstrap','colorpicker.module'
+   'ui.router', 'checklist-model', 'ngAnimate', 'ui.bootstrap','colorpicker.module'
 ])
 .config(function ($stateProvider, $urlRouterProvider ) {
   'use strict';
@@ -11,6 +11,7 @@ angular.module('traceitapp', [
 
         $stateProvider
 
+            //
             .state('traceit-start', {
                 url: '/home',
                 templateUrl: '/traceitapp/home/home.html',

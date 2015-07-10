@@ -1,27 +1,20 @@
 /**
- * Directives
+ * Code Print Directives
  */
-
-function replaceText(str)
-{
-  var str1 = String(str);
-  return str1.replace(/\n/g,"<br/>");
-}
-
 
 angular.module('prettyprint', [])
 .directive('prettyPrint', ['$filter', function ($filter){
+	'use strict';
     return {
         template: '<pre class="prettyprint" ng-bind-html="codePretty"></pre>',
         link: function (scope) {
-            console.log("scope.code", scope.code);
             scope.codePretty = $filter('prettyprint')(scope.code);
-          console.log("codePretty", scope.codePretty );
         }
     };
 }])
 
   .directive('prettyprint', function( $timeout ) {
+  	'use strict';
   return {
     restrict: 'C',
     link: function postLink(scope, element, attrs) {

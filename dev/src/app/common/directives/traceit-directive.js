@@ -11,6 +11,33 @@
 
 /* jshint devel:true */
 
+//to not be dependant on lodash 
+function traceitisString(value) {
+    return typeof value == 'string' ||
+      value && typeof value == 'object' && traceittoString.call(value) == stringClass || false;
+};
+
+function traceitisArray(value) {
+    return value && typeof value == 'object' && typeof value.length == 'number' &&
+      Object.prototype.toString.call(value) == arrayClass || false;
+};
+
+
+function traceitIsEmpty(value) {
+    if (!value) {
+      return true;
+    }
+    if (traceitisArray(value) || traceitisString(value)) {
+      return !value.length;
+    }
+    for (var key in value) {
+      if (hasOwnProperty.call(value, key)) {
+        return false;
+      }
+    }
+    return true;
+};
+ 
 angular.module('angular-traceit', [])
   .directive('traceit', function ( $timeout ) {
     'use strict';
@@ -19,80 +46,82 @@ angular.module('angular-traceit', [])
       scope: {
         isVisible: '=',
         traceOptObj: '=traceOptObj',
-        isOpen: "=traceToggle",
-        doDelete: "=traceDelete",
-        doRetrace: "=retraceTrigger",
+        isOpen: '=traceToggle',
+        doDelete: '=traceDelete',
+        doRetrace: '=retraceTrigger',
         onhide: '&',
-        onendtrace: "&",
-        onclick: "&"
+        onendtrace: '&',
+        onclick: '&'
       },
       link: function (scope, elem, attrs) {
 
         // will position relative to the document by default
         var useRelativePositioningOpt = true;
-        if (!_.isEmpty(attrs.useRelativePositioning)) {
-          if (attrs.useRelativePositioning == 'false')
-            useRelativePositioningOpt = false;
+        if (!traceitIsEmpty(attrs.useRelativePositioning)) {
+          if (attrs.useRelativePositioning == 'false'){
+          	useRelativePositioningOpt = false;
+          }
         }
 
         var traceCanvasPaddingOpt = 10;
-        if (!_.isEmpty(attrs.traceCanvasPadding)) {
+        if (!traceitIsEmpty(attrs.traceCanvasPadding)) {
           traceCanvasPaddingOpt = parseInt(attrs.traceCanvasPadding);
         }
 
         var redrawSpeedOpt = 3500;
-        if (!_.isEmpty(attrs.redrawSpeed)) {
+        if (!traceitIsEmpty(attrs.redrawSpeed)) {
           redrawSpeedOpt = parseInt(attrs.redrawSpeed);
         }
 
         var traceCursorOpt = 'pointer';
-        if (!_.isEmpty(attrs.traceCursor)) {
+        if (!traceitIsEmpty(attrs.traceCursor)) {
           traceCursorOpt = attrs.traceCursor;
         }
 
         var isVisibleOpt = true;
-        if (!_.isEmpty(attrs.isVisible)) {
-          if (attrs.isVisible == 'false')
-            isVisibleOpt = false;
+        if (!traceitIsEmpty(attrs.isVisible)) {
+          if (attrs.isVisible == 'false'){
+          	isVisibleOpt = false;
+          }     
         }
 
         var traceOptObj = {};
 
-        if (!_.isEmpty(attrs.traceOptObj)) {
+        if (!traceitIsEmpty(attrs.traceOptObj)) {
           traceOptObj = scope.traceOptObj;
         }
 
-        if (!_.isEmpty(attrs.stroke)) {
-          traceOptObj['stroke'] = attrs.stroke;
+        if (!traceitIsEmpty(attrs.stroke)) {
+          traceOptObj.stroke = attrs.stroke;
         }
 
-        if (!_.isEmpty(attrs.strokeWidth)) {
+        if (!traceitIsEmpty(attrs.strokeWidth)) {
           traceOptObj['stroke-width'] = parseInt(attrs.strokeWidth);
         }
 
-        if (!_.isEmpty(attrs.strokeOpacity)) {
+        if (!traceitIsEmpty(attrs.strokeOpacity)) {
           traceOptObj['stroke-opacity'] = parseFloat(attrs.strokeOpacity);
         }
 
-        if (!_.isEmpty(attrs.fill)) {
-          traceOptObj['fill'] = attrs.fill;
+        if (!traceitIsEmpty(attrs.fill)) {
+          traceOptObj.fill = attrs.fill;
         }
 
-        if (!_.isEmpty(attrs.fillOpacity)) {
+        if (!traceitIsEmpty(attrs.fillOpacity)) {
           var val = attrs.fillOpacity;
           traceOptObj['fill-opacity'] = parseFloat(val);
         }
 
-        if (!_.isEmpty(attrs.strokeDasharray)) {
+        if (!traceitIsEmpty(attrs.strokeDasharray)) {
           traceOptObj['stroke-dasharray'] = attrs.strokeDasharray;
         }
 
-        if (!_.isEmpty(attrs.gapPoint)) {
+        if (!traceitIsEmpty(attrs.gapPoint)) {
           traceOptObj['gap-point'] = attrs.gapPoint;
         }
 
-        if (!_.isEmpty(attrs.zindex)) {
-          traceOptObj['zindex'] = parseInt(attrs.zindex);
+        if (!traceitIsEmpty(attrs.zindex)) {
+          traceOptObj.zindex = parseInt(attrs.zindex);
         }
 
 
@@ -132,7 +161,7 @@ angular.module('angular-traceit', [])
         if (attrs.onclick && angular.isDefined(attrs.onclick)) {
           //is there a do not hide on click flag set?
           var hideShape = true;
-          if (!_.isEmpty(attrs.donothideonclick)) {
+          if (!traceitIsEmpty(attrs.donothideonclick)) {
             hideShape = false;
           }
 
@@ -205,7 +234,7 @@ angular.module('angular-traceit', [])
             }
           });
 
-          scope.$on("reTrace", function (e, val) {
+          scope.$on('reTrace', function (e, val) {
             var inst = $(elem).data('trace');
             inst.reTrace(traceInitObj);
           });
@@ -213,12 +242,12 @@ angular.module('angular-traceit', [])
           //Update model to reflect view
           //$elem.bind('show.trace'
           //$(elem).on('hide.trace', function(ev) {
-            //console.log("hide.trace: ev",ev, "isOpen", scope.isOpen);
+            //console.log('hide.trace: ev',ev, 'isOpen', scope.isOpen);
           //});
         };
 
         //wait for dynamically generated element id's etc
         $timeout(init, 0);
       }
-    }
+    };
   });

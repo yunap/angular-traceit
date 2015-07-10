@@ -71,7 +71,7 @@
 
 .ghost-button-full-color {
   display: inline-block;
-  width: 200px;
+  min-width: 150px;
   padding: 8px;
   color: #fff;
   background-color: transparent;
@@ -86,31 +86,6 @@
 .ghost-button-full-color:hover,
 .ghost-button-full-color:active {
   background-color: #3eb5af; //#9363c4;
-  border-color: #3eb5af;
-  color: #fff;
-  transition: color 0.3s ease-in,
-  background-color 0.3s ease-in,
-  border-color 0.3s ease-in;
-}
-
-
-.ghost-button-full-color {
-  display: inline-block;
-  width: 200px;
-  padding: 8px;
-  color: #fff;
-  background-color: transparent;
-  border: 2px solid #fff;
-  text-align: center;
-  outline: none;
-  text-decoration: none;
-  transition: color 0.3s ease-out,
-  background-color 0.3s ease-out,
-  border-color 0.3s ease-out;
-}
-.ghost-button-full-color:hover,
-.ghost-button-full-color:active {
-  background-color: #3eb5af;
   border-color: #3eb5af;
   color: #fff;
   transition: color 0.3s ease-in,

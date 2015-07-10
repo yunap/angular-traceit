@@ -5,6 +5,7 @@ angular
     function ($scope, $rootScope, $state, $location, $anchorScroll) {
       'use strict';
 
+
       $scope.box1 = $scope.box2 = $scope.box3 = $scope.box4 = false;
 
       $scope.traceOptions = {
@@ -42,7 +43,7 @@ angular
       $scope.catListCheckbox = [];
       //init cat image div ids
       for (var i = 1; i < 13; i++) {
-        var id = "c" + i;
+        var id = 'c' + i;
         $scope.catListCheckbox[id] = false;
       }
 
@@ -54,30 +55,30 @@ angular
 
 
       //this is the scope variable being watched
-      $scope.retraceWatchers = [{"retrace0": true}, {"retrace1": true}, {"retrace31": true}, {"retrace32": true}];
+      $scope.retraceWatchers = [{retrace0: true}, {retrace1: true}, {retrace31: true}, {retrace32: true}];
 
       $scope.retraceWatchersOptionsObj = {
-        "retrace31": {
+        retrace31: {
           'stroke-width': 3,
           'stroke-opacity': 1,
           'fill': '#0000cc',
           'fill-opacity': 0.2
         },
-        "retrace32": {
+        retrace32: {
           'stroke': '#aa0000',
           'stroke-width': 4,
           'stroke-opacity': 1,
           'isVisible': 'true'
         },
 
-        "retrace1": {
+        retrace1: {
           'stroke': '#00cccc',
           'stroke-width': 3,
           'stroke-opacity': 1,
           isVisible: true
         },
 
-        "retrace0": {
+        retrace0: {
           'stroke': '#330044',
           'stroke-width': 3,
           'stroke-opacity': 1,
@@ -86,7 +87,7 @@ angular
       };
 
       $scope.retraceWatchersNewOptionsObj = {
-        "retrace31": {
+        retrace31: {
           'stroke-width': 2,
           'stroke-opacity': 1,
           'stroke': 'yellow',
@@ -101,8 +102,8 @@ angular
 
       $scope.traceOptionsNewShape = [
         {
-          name: "gap-point",
-          type: "string",
+          name: 'gap-point',
+          type: 'string',
           description: "[ 'top', 'top_left', 'top_right', 'bottom', 'bottom_left', 'bottom_right' ] or number	0 - 100, where 0 and 100 both mean 'top' (@12 o'clock position), 50 is 'bottom' (@6pm), 25 is 'top_right' (@3pm) etc.",
           //min: "0",
           //max: "100",
@@ -135,27 +136,27 @@ angular
           ]
         },
         {
-          name: "traceCanvasPadding",
-          type: "number",
-          min: "3",
-          max: "50",
-          step: "1"
+          name: 'traceCanvasPadding',
+          type: 'number',
+          min: '3',
+          max: '50',
+          step: '1'
         }
       ];
 
       $scope.traceOptionsTxt = [
         {
-          name: "arrow-end",
-          type: "string",
-          description: "arrowhead on the end of the path. The format for string is type[-width[-length]]. Possible types: classic, block, open, oval, diamond, none, width: wide, narrow, midium, length: long, short, midium.",
+          name: 'arrow-end',
+          type: 'string',
+          description: 'arrowhead on the end of the path. The format for string is type[-width[-length]]. Possible types: classic, block, open, oval, diamond, none, width: wide, narrow, midium, length: long, short, midium.',
           dropdownList: [
             {
               value: 'none',
               name: 'none'
             },
             {
-              value: 'classic-wide-long',
-              name: 'classic-wide-long'
+              value: 'classic-narrow-short',
+              name: 'classic-narrow-short'
             },
             {
               value: 'classic-narrow-midium',
@@ -184,75 +185,75 @@ angular
           ]
         },
         {
-          name: "traceCursor",
-          type: "string",
-          description: "CSS type of the cursor",
+          name: 'traceCursor',
+          type: 'string',
+          description: 'CSS type of the cursor',
           dropdownList: [
             { value: 'alias', name: 'alias' },
             {
-              value: "cell",
-              name: "cell"
+              value: 'cell',
+              name: 'cell'
             },
             {
-              value: "copy",
-              name: "copy"
+              value: 'copy',
+              name: 'copy'
             },
             {
-              value: "crosshair",
-              name: "crosshair"
+              value: 'crosshair',
+              name: 'crosshair'
             },
             {
-              value: "default",
-              name: "default"
+              value: 'default',
+              name: 'default'
             },
             {
-              value: "move",
-              name: "move"
+              value: 'move',
+              name: 'move'
             },
             {
-              value: "not-allowed",
-              name: "not-allowed"
+              value: 'not-allowed',
+              name: 'not-allowed'
             },
             {
-              value: "pointer",
-              name: "pointer"
+              value: 'pointer',
+              name: 'pointer'
             },
             {
-              value: "progress",
-              name: "progress"
+              value: 'progress',
+              name: 'progress'
             }
           ]
         },
         {
-          name: "fill",
-          type: "string",
-          description: "color, gradient or image",
-          color: "true"
+          name: 'fill',
+          type: 'string',
+          description: 'color, gradient or image',
+          color: true
         },
         {
-          name: "fill-opacity",
-          type: "number",
-          min: "0",
-          max: "1",
-          step: "0.1"
+          name: 'fill-opacity',
+          type: 'number',
+          min: '0',
+          max: '1',
+          step: '0.1'
         },
         {
-          name: "opacity",
-          type: "number",
-          description: "",
-          min: "0",
-          max: "1",
-          step: "0.01"
+          name: 'opacity',
+          type: 'number',
+          description: '',
+          min: '0',
+          max: '1',
+          step: '0.01'
         },
         {
-          name: "stroke",
-          type: "string",
-          description: "stroke colour",
-          color: "true"
+          name: 'stroke',
+          type: 'string',
+          description: 'stroke colour',
+          color: true
         },
         {
-          name: "stroke-dasharray",
-          type: "string",
+          name: 'stroke-dasharray',
+          type: 'string',
           description: "[ '', '-', '.', '-.', '-..', '. ', '- ', '--', '- .', '--.', '--..' ]",
           dropdownList: [
             {
@@ -302,8 +303,8 @@ angular
           ]
         },
         {
-          name: "stroke-linecap",
-          type: "string",
+          name: 'stroke-linecap',
+          type: 'string',
           description: "['butt', 'square', 'round']",
           dropdownList: [
             {
@@ -321,32 +322,32 @@ angular
           ]
         },
         {
-          name: "stroke-opacity",
-          type: "number",
-          description: "",
-          min: "0",
-          max: "1",
-          step: "0.1"
+          name: 'stroke-opacity',
+          type: 'number',
+          description: '',
+          min: '0',
+          max: '1',
+          step: '0.1'
         },
         {
-          name: "stroke-width",
-          type: "number",
+          name: 'stroke-width',
+          type: 'number',
           description: "stroke width in pixels, default is '1'",
-          min: "1",
-          max: "10",
-          step: "1"
+          min: '1',
+          max: '10',
+          step: '1'
         },
         {
-          name: "title",
-          type: "string",
-          description: "will create tooltip with a given text"
+          name: 'title',
+          type: 'string',
+          description: 'will create tooltip with a given text'
         },
         {
-          name: "redrawSpeed",
-          type: "number",
-          min: "900",
-          max: "10000",
-          step: "100"
+          name: 'redrawSpeed',
+          type: 'number',
+          min: '900',
+          max: '10000',
+          step: '100'
         }
       ];
 
@@ -366,7 +367,7 @@ angular
 
 
       $scope.onEndDemoTrace = function () {
-        //$scope.demo = "on End Demo Trace";
+        //$scope.demo = 'on End Demo Trace';
         console.log('Triggered from DEMO callback when trace animation completes.', $scope.demo);
       };
 
@@ -393,7 +394,7 @@ angular
 
 
       $scope.reTrace = function (retraceIDs) {
-        retraceIDs.forEach(function (e, index) {
+        retraceIDs.forEach(function (e) {
             if( $scope.retraceWatchersNewOptionsObj[e] !== undefined ) {
               angular.forEach( $scope.retraceWatchersNewOptionsObj[e], function(value, key) {
                 $scope.retraceWatchersOptionsObj[e][key] = value;
@@ -405,7 +406,7 @@ angular
       };
 
       $scope.reTraceAll = function () {
-        $rootScope.$broadcast("reTrace", {
+        $rootScope.$broadcast('reTrace', {
           'stroke': 'red',
           'stroke-width': 2,
           'stroke-opacity': 1,
@@ -418,6 +419,7 @@ angular
       $scope.traceRandom = function () {
         if (!$scope.box3) {
           //generate random color // & 0x7f7f7f).toString(16); to select rendom dark colors
+          //'#' + (Math.random() * 0xFFFFFF << 0).toString(16),
           $scope.traceOptEx2.stroke = '#' + (Math.random() * 0xffffff << 0).toString(16);
           $scope.traceOptEx2.fill = '#' + Math.floor(Math.random() * 0xffffff).toString(16);
           $scope.traceOptEx2.redrawSpeed = Math.floor(Math.random() * 10000) + 1000;
