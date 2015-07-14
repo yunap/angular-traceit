@@ -10,7 +10,7 @@ Examples
 Getting Started:
 ---------------
 (1) Install the plugin into your Angular.js project, manually or via "bower install angular-traceit --save"
-(2) Include angular-traceit.js (or angular-traceit.min.js) in your index.html, after including Angular itself
+(2) Include angular-traceit.js in your index.html, after including Angular itself
 (3) Add 'angular-traceit' as a new module dependency in your angular app.
 
 ```JavaScript
