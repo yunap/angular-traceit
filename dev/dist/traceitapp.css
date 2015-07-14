@@ -4580,16 +4580,6 @@ button.close {
     display: none !important; } }
 
 @font-face {
-  font-family: 'Avenir';
-  src: url('../assets/AvenirLTStd-Light.eot');
-  src: url('../assets/AvenirLTStd-Light.eot?#iefix') format('embedded-opentype'), url('../assets/AvenirLTStd-Light.woff') format('woff'), url('../assets/AvenirLTStd-Light.ttf') format('truetype'), url('../assets/AvenirLTStd-Light.svg#AvenirLTStd-Light') format('svg'); }
-
-@font-face {
-  font-family: 'AvenirRoman';
-  src: url('../assets/AvenirLTStd-Roman.eot');
-  src: url('../assets/AvenirLTStd-Roman.eot?#iefix') format('embedded-opentype'), url('../assets/AvenirLTStd-Roman.woff') format('woff'), url('../assets/AvenirLTStd-Roman.ttf') format('truetype'), url('../assets/AvenirLTStd-Roman.svg#AvenirLTStd-Roman') format('svg'); }
-
-@font-face {
   font-family: 'Wire One';
   font-style: normal;
   font-weight: 400;
@@ -4902,10 +4892,6 @@ input, textarea, button {
   border: 2px #808080;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), 0 0 0.25em 0 rgba(0, 0, 0, 0.25) inset; }
 
-.selected {
-  background-image: url('/assets/img/blue_repeater.png');
-  background-repeat: repeat; }
-
 .margin-left {
   margin-left: 20px; }
 
@@ -5017,7 +5003,7 @@ ul > li:nth-child(odd) {
   overflow: hidden; }
 
 .p-spinner {
-  background-image: url('/assets/img/spinner.gif');
+  background-image: url('assets/img/spinner.gif');
   background-repeat: no-repeat;
   width: 24px;
   height: 24px;
@@ -5025,10 +5011,6 @@ ul > li:nth-child(odd) {
 
 .p-spinner-align {
   text-align: center; }
-
-.p-blue-repeater {
-  background-image: url('/assets/img/blue_repeater.png');
-  background-repeat: repeat; }
 
 .p-vertical-line {
   border-right: 1px solid #808080; }
@@ -5229,7 +5211,7 @@ a.trace_example_style, a.trace_example_style:visited, a.trace_example_style:hove
 /************************* sandbox.css ******************************/
 /*
 html {
-    background: #575d4f url('/assets/img/body4.jpg') no-repeat center center fixed;
+    background: #575d4f url('assets/img/body4.jpg') no-repeat center center fixed;
     min-height: 100%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -5238,7 +5220,7 @@ html {
 }
 */
 .img-cover {
-  background: #575d4f url('/assets/img/body4.jpg') no-repeat center center fixed;
+  background: #575d4f url('../../assets/img/body4.jpg') no-repeat center center fixed;
   min-height: 240px;
   padding: 30px 10px;
   -webkit-background-size: cover;
@@ -5567,7 +5549,7 @@ a:hover, a:active {
   color: inherit; }
 
 #project_one {
-  background-image: url('/assets/img/paper.png'); }
+  background-image: url('../assets/img/paper.png'); }
 
 .brand-title {
   padding: 10px 20px;
@@ -5604,7 +5586,7 @@ img.git_icon {
   padding: 2px; }
 
 #logo_img {
-  background: url('/assets/img/logo.png') no-repeat left center;
+  background: url('assets/img/logo.png') no-repeat left center;
   height: 100px;
   width: 110px; }
 
@@ -5872,25 +5854,25 @@ dd, dt {
   width: 100%; }
 
 .wcolor_y {
-  background: url('/assets/img/wc.png');
+  background: url('../../assets/img/wc.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%; }
 
 .wcolor_blue {
-  background: url('/assets/img/wc_blue.png');
+  background: url('../../assets/img/wc_blue.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%; }
 
 .wcolor_green {
-  background: url('/assets/img/wc_green.png');
+  background: url('../../assets/img/wc_green.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%; }
 
 .wcolor_terracotta {
-  background: url('/assets/img/wc_terracotta.png');
+  background: url('../../assets/img/wc_terracotta.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%; }
@@ -5905,7 +5887,7 @@ dd, dt {
   border-radius: 2px; }
 
 #canvas_container_modal {
-  background: url('/assets/img/paper.png');
+  background: url('../../assets/img/paper.png');
   color: #222;
   top: 0;
   left: 0;
@@ -5942,7 +5924,7 @@ dd, dt {
   border: 1px solid #a44236; }
 
 .step {
-  background: url('/assets/img/logo.png') no-repeat left center; }
+  background: url('../../assets/img/logo.png') no-repeat left center; }
 
 @media only screen and (max-width: 480px) {
   .modal-dialog {

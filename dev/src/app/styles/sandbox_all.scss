@@ -95,7 +95,7 @@ a.trace_example_style:hover {
 /************************* sandbox.css ******************************/
 /*
 html {
-    background: #575d4f url('/assets/img/body4.jpg') no-repeat center center fixed;
+    background: #575d4f url('assets/img/body4.jpg') no-repeat center center fixed;
     min-height: 100%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -105,7 +105,7 @@ html {
 */
 
 .img-cover {
-  background: #575d4f url('/assets/img/body4.jpg') no-repeat center center fixed;
+  background: #575d4f url('../../assets/img/body4.jpg') no-repeat center center fixed;
   min-height: 240px;
   padding: 30px 10px;
   -webkit-background-size: cover;
@@ -490,7 +490,7 @@ a:active {
     color: inherit;
 }
 #project_one {
-    background-image: url('/assets/img/paper.png');
+    background-image: url('../assets/img/paper.png');
 }
 .brand-title {
     padding: 10px 20px;
@@ -527,7 +527,7 @@ img.git_icon {
     padding: 2px;
 }
 #logo_img {
-    background: url('/assets/img/logo.png') no-repeat left center;
+    background: url('assets/img/logo.png') no-repeat left center;
     height: 100px;
     width: 110px;
 }
@@ -808,25 +808,25 @@ dt {
     width: 100%;
 }
 .wcolor_y {
-    background: url('/assets/img/wc.png');
+    background: url('../../assets/img/wc.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
 }
 .wcolor_blue {
-    background: url('/assets/img/wc_blue.png');
+    background: url('../../assets/img/wc_blue.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
 }
 .wcolor_green {
-    background: url('/assets/img/wc_green.png');
+    background: url('../../assets/img/wc_green.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
 }
 .wcolor_terracotta {
-    background: url('/assets/img/wc_terracotta.png');
+    background: url('../../assets/img/wc_terracotta.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
@@ -841,7 +841,7 @@ dt {
     border-radius: 2px;
 }
 #canvas_container_modal {
-    background: url('/assets/img/paper.png');
+    background: url('../../assets/img/paper.png');
     color: #222;
     top: 0;
     left: 0;
@@ -878,7 +878,7 @@ dt {
     border: 1px solid rgb(164, 66, 54);
 }
 .step {
-    background: url('/assets/img/logo.png') no-repeat left center;
+    background: url('../../assets/img/logo.png') no-repeat left center;
 }
 @media only screen and (max-width: 480px) {
     .modal-dialog {
