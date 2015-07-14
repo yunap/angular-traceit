@@ -6,7 +6,12 @@
     "start": "gulp watch",
     "test": "gulp test"
   },
-  "dependencies": {},
+  "dependencies": {
+    "gulp-load-plugins": "~1.0.0-rc.1",
+    "gulp-angular-filesort": "~1.1.1",
+    "gulp-bower-files": "~0.2.7",
+    "gulp-cached": "~1.1.0"
+  },
   "devDependencies": {
     "event-stream": "^3.1.5",
     "gulp": "^3.8.6",

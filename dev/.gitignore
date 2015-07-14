@@ -1,6 +1,7 @@
 node_modules/
 bower_components/
 .tmp/
+dist/
 .idea
 npm
 src/app/app.css

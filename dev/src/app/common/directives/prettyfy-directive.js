@@ -13,7 +13,7 @@ angular.module('prettyprint', [])
     };
 }])
 
-  .directive('prettyprint', function( $timeout ) {
+  .directive('prettyprint', ['$timeout', function( $timeout ) {
   	'use strict';
   return {
     restrict: 'C',
@@ -27,4 +27,4 @@ angular.module('prettyprint', [])
       $timeout(init, 0);
     }
   };
-});
+}]);
