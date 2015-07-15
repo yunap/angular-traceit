@@ -504,7 +504,7 @@ module.run(['$templateCache', function($templateCache) {
     '  var myApp=angular.module(\'myApp\', [\'angular-traceit\']);\n' +
     '&lt;/script&gt;</pre></div><p class="examples">Apply the directive to your element. If you would like to see your element be traced immediately initialize a trace instance with default options.</p><div class="primary-content"><pre class="prettyprint">\n' +
     '&lt;div id="elementid" traceit &gt;Let\'s trace this element.&lt;/div&gt;\n' +
-    '              </pre></div><p class="examples">If you would like element to not be traced right away initialize a trace instance with \'is-visible\' attribute set to false and providing scope variable for trace-toggle attribute, initialize it to false. Then later in your controller you can call reTrace method by setting trace-toggle scope variable to true.</p><div class="primary-content"><pre class="prettyprint">\n' +
+    '              </pre></div><p class="examples">If you would like element to not be traced right away initialize a trace instance with \'is-visible\' attribute set to false and provide scope variable for trace-toggle attribute, initialize it to false. Then later in your controller you can call reTrace method by setting trace-toggle scope variable to true.</p><div class="primary-content"><pre class="prettyprint">\n' +
     '//Set \'is-visible\' attribute to false, provide a scope variable for trace-toggle attribute\n' +
     '&lt;h2  id="elementid" is-visible="false" trace-toggle="toggleOne" traceit&gt;Title here.&lt;/h2&gt;\n' +
     '</pre></div><br><div class="primary-content"><pre class="prettyprint">\n' +

@@ -188,8 +188,8 @@ td, th {
 
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url('../assets/img/glyphicons-halflings-regular.eot');
-  src: url('../assets/img/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../assets/img/glyphicons-halflings-regular.woff') format('woff'), url('../assets/img/glyphicons-halflings-regular.ttf') format('truetype'), url('../assets/img/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg'); }
+  src: url('../../assets/img/glyphicons-halflings-regular.eot');
+  src: url('../../assets/img/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../../assets/img/glyphicons-halflings-regular.woff') format('woff'), url('../../assets/img/glyphicons-halflings-regular.ttf') format('truetype'), url('../../assets/img/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg'); }
 
 .glyphicon {
   position: relative;

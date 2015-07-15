@@ -65356,7 +65356,6 @@ angular.module('colorpicker.module', [])
 
             this.$elem.bind('delete.trace', function(event) {
                 if (me.options.shape !== undefined) {
-                    console.log(me.options, me.options.wrapIdToTrace);
                     //me.options.shape.hide().remove();
                     //$("#" + me.options.wrapIdToTrace).hide().remove();
                     me.options.shape.remove();
@@ -65642,32 +65641,32 @@ angular.module('angular-traceit', [])
       },
       link: function (scope, elem, attrs) {
 
-//helper functions placed here so traceit-directive.js won't be dependant on lodash 
-
-	function traceitisString(value) {
-	    return typeof value == 'string' ||
-	      value && typeof value == 'object' && traceittoString.call(value) == stringClass || false;
-	};
+		//helper functions placed here so traceit-directive.js won't be dependant on lodash 
 	
-	function traceitisArray(value) {
-	    return value && typeof value == 'object' && typeof value.length == 'number' &&
-	      Object.prototype.toString.call(value) == arrayClass || false;
-	};
-	
-	function traceitIsEmpty(value) {
-	    if (!value) {
-	      return true;
-	    }
-	    if (traceitisArray(value) || traceitisString(value)) {
-	      return !value.length;
-	    }
-	    for (var key in value) {
-	      if (hasOwnProperty.call(value, key)) {
-	        return false;
-	      }
-	    }
-	    return true;
-	};
+		function traceitisString(value) {
+		    return typeof value == 'string' ||
+		      value && typeof value == 'object' && traceittoString.call(value) == stringClass || false;
+		};
+		
+		function traceitisArray(value) {
+		    return value && typeof value == 'object' && typeof value.length == 'number' &&
+		      Object.prototype.toString.call(value) == arrayClass || false;
+		};
+		
+		function traceitIsEmpty(value) {
+		    if (!value) {
+		      return true;
+		    }
+		    if (traceitisArray(value) || traceitisString(value)) {
+		      return !value.length;
+		    }
+		    for (var key in value) {
+		      if (hasOwnProperty.call(value, key)) {
+		        return false;
+		      }
+		    }
+		    return true;
+		};
 	
         // will position relative to the document by default
         var useRelativePositioningOpt = true;
