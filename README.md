@@ -33,7 +33,7 @@ If you would like element to not be traced right away initialize a trace instanc
 
 ```JavaScript
 //initialize with default options
-<div id="elementid" traceit >Let's trace this element.</div>
+<div id="elementid" traceit >Let us trace this element.</div>
 
 //or set 'is-visible' attribute to false, provide a scope variable for trace-toggle attribute
 <h2  id="elementid" is-visible="false" trace-toggle="toggleOne" traceit>Title here.</h2>
